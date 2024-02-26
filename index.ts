@@ -15,22 +15,23 @@ let totalGuesses = 0
 
 while (1) {
   // input
-  const userGuess = createPrompt("Are you heating sub, pizza, or soup?(lowercase): ")
+  const userGuess = createPrompt("Guess a number between 1 - 6:  ")
   const userGuessInt = parseInt(userGuess.value || "-1")
   // error check
   if (isNaN(userGuessInt) == true || userGuessInt < 1 || userGuessInt > 6) {
-    console.log("Invalid input. (This won’t count as a guess)")
+    console.log("Invalid input. (This won’t count as a guess)\n")
   } else {
     // process
     if (userGuessInt > randomNumber) {
       totalGuesses += 1
-      console.log(`You guessed too low, try again!`)
+      console.log(`You guessed too high, try again!\n`)
     } else if (userGuessInt < randomNumber) {
       totalGuesses += 1
-      console.log(`You guessed too high, try again!`)
+      console.log(`You guessed too low, try again!\n`)
     } else {
       // output
-      console.log(`Correct!\nTotal guesses: ${totalGuesses}')
+      totalGuesses += 1
+      console.log(`Correct!\nTotal guesses: ${totalGuesses}`)
       break
     }
   }
