@@ -22,15 +22,13 @@ while (1) {
     console.log("Invalid input. (This won’t count as a guess)\n")
   } else {
     // process
+    totalGuesses += 1
     if (userGuessInt > randomNumber) {
-      totalGuesses += 1
       console.log(`You guessed too high, try again!\n`)
     } else if (userGuessInt < randomNumber) {
-      totalGuesses += 1
       console.log(`You guessed too low, try again!\n`)
     } else {
       // output
-      totalGuesses += 1
       console.log(`Correct!\nTotal guesses: ${totalGuesses}`)
       break
     }
